@@ -9,7 +9,7 @@ Version:                0.1.5
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Key event handling library for tcell }
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG README.md
