@@ -25,6 +25,8 @@ Source0:        %{gosource}
 %description
 %{common_description}
 
+BuildRequires: xdg-user-dirs
+
 %gopkg
 
 %prep
