@@ -4,7 +4,7 @@
 # https://gitlab.com/tslocum/cview
 %global goipath         gitlab.com/tslocum/cview
 %global forgeurl        https://gitlab.com/tslocum/cview
-Version:                1.5.3
+Version:                v1.5.3
 
 %gometa
 

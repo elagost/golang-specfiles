@@ -4,7 +4,7 @@
 # https://gitlab.com/tslocum/cbind
 %global goipath         gitlab.com/tslocum/cbind
 %global forgeurl        https://gitlab.com/tslocum/cbind
-Version:                0.1.5
+Version:                v0.1.5
 
 %gometa
 
