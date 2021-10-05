@@ -22,10 +22,11 @@ License:        BSD
 URL:            %{gourl}
 Source0:        %{gosource}
 
+BuildRequires: xdg-user-dirs
+Requires: xdg-user-dirs
+
 %description
 %{common_description}
-
-BuildRequires: xdg-user-dirs
 
 %gopkg
 
