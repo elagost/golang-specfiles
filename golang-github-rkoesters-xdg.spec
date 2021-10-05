@@ -31,6 +31,7 @@ Source0:        %{gosource}
 %goprep
 
 %build
+mkdir -p $HOME/.local/share/Trash/files
 for cmd in cmd/* ; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
