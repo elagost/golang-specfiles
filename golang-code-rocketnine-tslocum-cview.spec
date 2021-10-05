@@ -27,10 +27,12 @@ Name:           %{goname}
 Release:        1%{?dist}
 Summary:        None
 
-License:        # FIXME
+License:        MIT
 
-URL:            %{gourl}
-Source0:        %{gosource}
+#URL:            %{gourl}
+URL:            %{goipath}
+#Source0:        %{gosource}
+Source0:        https://code.rocketnine.space/tslocum/cview/archive/v%{version}.tar.gz
 
 BuildRequires:  golang(code.rocketnine.space/tslocum/cbind)
 BuildRequires:  golang(github.com/gdamore/tcell/v2)
