@@ -35,6 +35,7 @@ Requires: xdg-user-dirs
 
 %build
 mkdir -p $HOME/.local/share/Trash/files
+xdg-user-dirs-update
 for cmd in cmd/* ; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
