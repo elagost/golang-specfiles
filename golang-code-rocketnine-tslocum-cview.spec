@@ -9,7 +9,7 @@ Version:                1.5.7
 %gometa
 
 %global common_description %{expand:
-# FIXME}
+Terminal-based user interface toolkit}
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG CONTRIBUTING.md DESIGN.md FORK.md README.md\\\
