@@ -33,6 +33,7 @@ BuildRequires:  golang(github.com/gdamore/tcell/v2)
 %goprep
 
 %build
+sed -i -e 's,code.rocketnine.space,gitlab.com' whichkeybind/main.go
 for cmd in whichkeybind; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
