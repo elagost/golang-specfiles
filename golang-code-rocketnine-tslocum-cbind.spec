@@ -33,9 +33,8 @@ BuildRequires:  golang(github.com/gdamore/tcell/v2)
 %goprep
 
 %build
-for cmd in whichkeybind; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
+#%gobuild -o %{gobuilddir}/bin/whichkeybind %{goipath}/whichkeybind
+%gobuild -o %{gobuilddir}/bin/ %{goipath}
 
 %install
 %gopkginstall
