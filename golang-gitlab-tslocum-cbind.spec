@@ -22,7 +22,6 @@ License:        MIT
 URL:            %{gourl}
 Source0:        %{gosource}
 
-BuildRequires:  golang(code.rocketnine.space/tslocum/cbind)
 BuildRequires:  golang(github.com/gdamore/tcell/v2)
 
 %description
