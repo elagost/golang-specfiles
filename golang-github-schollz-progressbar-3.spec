@@ -2,7 +2,8 @@
 %bcond_without check
 
 # https://github.com/schollz/progressbar
-%global goipath         github.com/schollz/progressbar
+%global goipath         github.com/schollz/progressbar/v3
+%global forgeurl        https://github.com/schollz/progressbar
 Version:                3.8.3
 
 %gometa
