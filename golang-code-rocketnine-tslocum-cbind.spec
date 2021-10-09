@@ -4,6 +4,8 @@
 # https://code.rocketnine.space/tslocum/cbind
 %global goipath         code.rocketnine.space/tslocum/cbind
 %global forgeurl        https://code.rocketnine.space/tslocum/cbind
+%global archiveurl      https://code.rocketnine.space/tslocum/cbind/archive/v%{version}.tar.gz
+%global gourl           code.rocketnine.space/tslocum/cbind
 Version:                0.1.5
 
 %gometa
@@ -13,13 +15,14 @@ Key event handling library for tcell }
 
 %global golicenses      LICENSE
 %global godocs          CHANGELOG README.md
+%global archivename cbind-%{version}
 
 Name:           %{goname}
 Release:        1%{?dist}
 Summary:        None
 
 License:        MIT
-URL:            %{goipath}
+URL:            https://%{goipath}
 Source0:        https://code.rocketnine.space/tslocum/cbind/archive/v%{version}.tar.gz
 
 BuildRequires:  golang(github.com/gdamore/tcell/v2)
@@ -33,13 +36,17 @@ BuildRequires:  golang(github.com/gdamore/tcell/v2)
 %goprep
 
 %build
-#%gobuild -o %{gobuilddir}/bin/whichkeybind %{goipath}/whichkeybind
-%gobuild -o %{gobuilddir}/bin/ %{goipath}
+for cmd in cbind; do
+  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
+done
 
 %install
 %gopkginstall
 install -m 0755 -vd                     %{buildroot}%{_bindir}
+install -m 0755 -vd                     %{buildroot}%{_datadir}/licenses/golang-code-rocketnine-tslocum-cbind/
 install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
+install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
+install -m 0755 -vp %{gobuilddir}/../cbind/LICENSE %{buildroot}%{_datadir}/licenses/golang-code-rocketnine-tslocum-cbind/
 
 %if %{with check}
 %check
@@ -47,8 +54,8 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %endif
 
 %files
+%doc %{_datadir}/gocode/src/%{goipath}/cbind/README.md
 %license LICENSE
-%doc CHANGELOG README.md
 %{_bindir}/*
 
 %gopkgfiles
